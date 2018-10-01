@@ -2,29 +2,22 @@ package gcu.bootcamp.java.christina.herman.drwhotwo;
 
 import java.util.Scanner;
 
-import gcu.bootcamp.java.christina.herman.drwhotwo.DrWho;
 
 public abstract class DrsFriend {
 	private Scanner scanner = new Scanner(System.in);
 
-	private DrWho name; 
+
 	private String friendName; 
-	private boolean isFriendOrFoe;
+	private boolean isFriendOrFoe; 
 
 	
-	public DrWho getName() {
-		return name;
-	}
-	public void setName(DrWho name) {
-		this.name = name;
-	}
 	public String getFriendName() {
 		return friendName;
 	}
 	public void setFriendName(String friendName) {
 		this.friendName = friendName;
 	}
-	public boolean isFriendOrFoe() {
+	public boolean getFriendOrFoe() {
 		return isFriendOrFoe;
 	}
 	public void setFriendOrFoe(boolean isFriendOrFoe) {

@@ -1,6 +1,5 @@
 package gcu.bootcamp.java.christina.herman.drwhotwo;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -11,9 +10,8 @@ public class Tardis extends DrsFriend {
 	List<String> realFriends = new ArrayList<String>();
 	List<String> enemies = new ArrayList<String>();
 
-
+	
 	private int whatYear; 
-	private int isOnFire; 
 	private int DrWho; 
 	
 
@@ -28,12 +26,7 @@ public class Tardis extends DrsFriend {
 	public void setWhatYear(int whatYear) {
 		this.whatYear = whatYear;
 	}
-	public int getIsOnFire() {
-		return isOnFire;
-	}
-	public void setIsOnFire(int isOnFire) {
-		this.isOnFire = isOnFire;
-	}
+
 	public int getDrWho() {
 		return DrWho;
 	}
@@ -151,7 +144,9 @@ public class Tardis extends DrsFriend {
 			if(realFriends.contains(friend)) {
 				System.out.println("Yes, they are a friend of the Dr.\nyou are on the following list of friends " 
 						+ realFriends  +".");
-				return true; 
+				super.setFriendOrFoe(true);
+				boolean isFriend = super.getFriendOrFoe();
+				return isFriend; 
 			}
 			else if (!realFriends.contains(friend)) {
 				System.out.println("Would you like to add " + friend+ " as a friend (1=Yes,\n"
@@ -162,7 +157,10 @@ public class Tardis extends DrsFriend {
 					Collections.sort(realFriends);
 					System.out.println("Yes, they are a friend of the Dr.\nyou are on the following list of friends " 
 							+ realFriends  +".");
-					return true;
+					super.setFriendOrFoe(true);
+					boolean isFriend = super.getFriendOrFoe();
+					return isFriend; 
+	
 				}
 			else {
 				enemies.add(friend);
@@ -170,7 +168,10 @@ public class Tardis extends DrsFriend {
 			}
 		
 		}
-		return false;
+		
+			super.setFriendOrFoe(false);
+			boolean isNotFriend = super.getFriendOrFoe();
+			return isNotFriend; 
 	}
 	private void displayEnemies() {
 		if(enemies.isEmpty()) {
@@ -181,18 +182,25 @@ public class Tardis extends DrsFriend {
 		}
 		
 	}
+	private void displayFriends() {
+		System.out.println("The following is a list of friends "+ realFriends );
+	}
+	private void promptUserFourTimes() {
+		for(int i = 0; i<4; i++){
+			String name2 = getNames();
+			isFriendOrFoe(name2);
+			}
+	}
 	public static void main(String [] args) {
 		Tardis friend = new Tardis("T");
 		friend.createListOfFriends();
 		Collections.sort(friend.realFriends);
-	
-		for(int i = 0; i<4; i++){
-		String name2 = friend.getNames();
-		friend.isFriendOrFoe(name2);
-		}
+		friend.promptUserFourTimes();
 		int num = friend.getNumberFromUser();
 		friend.findTheYear(num);
+		friend.displayFriends();
 		friend.displayEnemies();
+		
 		
 	}
 }
