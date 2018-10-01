@@ -1,6 +1,5 @@
 package gcu.bootcamp.java.christina.herman.drwhotwo;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -16,7 +15,7 @@ public class Tardis extends DrsFriend {
 	List<String> realFriends = new ArrayList<String>();
 	List<String> enemies = new ArrayList<String>();
 
-	// create attributes with access modifiers and types
+	// create attributes with access modifiers and types	
 	private int whatYear; 
 	private int DrWho; 
 	
@@ -203,7 +202,7 @@ public class Tardis extends DrsFriend {
             super.setFriendOrFoe(false);
             boolean isNotFriend = super.getFriendOrFoe();
             return isNotFriend;
-	}
+    }
     // create method to display enemies list, implement if statement if no enemies are 
     // added print no enemies
     // if there is an enemy print String message
@@ -242,6 +241,7 @@ public class Tardis extends DrsFriend {
 		friend.findTheYear(num);
 		friend.displayFriends();
 		friend.displayEnemies();
+		
 		
 	}
 }

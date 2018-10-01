@@ -10,14 +10,16 @@ import java.util.Scanner;
 public abstract class DrsFriend {
 	private Scanner scanner = new Scanner(System.in);
 
+
 	private String friendName; 
-	private boolean isFriendOrFoe;
+	private boolean isFriendOrFoe; 
 
 
 	/**
 	 * create method to get FriendName 
 	 * @return get value in attribute
 	 */
+	
 	public String getFriendName() {
 		return friendName;
 	}
