@@ -16,10 +16,29 @@ public class TardisTest {
 	public void testFindTheYear() {
 		int doctorNum = 1; 
 		exectedResult = 1963; 
-		actualRsult = tardis.findTheYear(doctorNum);
+		DrWho doctor = tardis.buildDoctor(doctorNum);
+		
+		actualRsult = doctor.getYear();
 		
 		assertEquals(exectedResult, actualRsult);
 		
 	}
+	
+	
+	@Test
+	public void testDoctorsAge() {
+		int doctorNum = 3; 
+		exectedResult = 1353; 
+		DrWho doctor = tardis.buildDoctor(doctorNum);
+		
+		actualRsult = doctor.getAge();
+		
+		assertEquals(exectedResult, actualRsult);
+		
+	}
+	
+	
+	
+	
 
 }
