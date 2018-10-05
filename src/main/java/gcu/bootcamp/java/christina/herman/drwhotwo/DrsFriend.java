@@ -64,7 +64,7 @@ public abstract class DrsFriend {
 				name = scanner.nextLine();
 				Integer.parseInt(name);
 			}
-		catch(NumberFormatException e) {
+			catch(NumberFormatException e) {
 			return name; 
 		}
 		
@@ -75,10 +75,17 @@ public abstract class DrsFriend {
 	 * @return num value
 	 */
 	public int getNumberFromUser() {
-		System.out.println("Enter a number: ");
-		int num = scanner.nextInt();
-		return num; 
-	}
+	
+		    while (true) {
+		        System.out.print("Enter a number of the Doctor you want from 0-10: ");
+		        String num = scanner.next();
+		        try {
+		            return Integer.parseInt(num);
+		        }
+		        catch (NumberFormatException e) {
+		        }
+		    }
+		}
 	/**
 	 * create abstract method isFriendOrFoe to pass in a string 
 	 * @param friend name value and return boolean expression

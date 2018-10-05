@@ -22,9 +22,7 @@ public class TardisTest {
 		
 		assertEquals(exectedResult, actualRsult);
 		
-	}
-	
-	
+	}	
 	@Test
 	public void testDoctorsAge() {
 		int doctorNum = 3; 

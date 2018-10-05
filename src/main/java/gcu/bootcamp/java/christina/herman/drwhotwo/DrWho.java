@@ -78,10 +78,11 @@ public class DrWho {
 	 * @param set age to value of age
 	 * @param set catchPhrase to value of catch phrase
 	 */
-	public DrWho(int friends, int age, String catchPhrase) {
+	public DrWho(int friends, int age, String catchPhrase, int year) {
 		this.age= age;
 		this.howManyFriends= friends; 
-		this.catchPhrase = catchPhrase; 
+		this.catchPhrase = catchPhrase;
+		this.year = year;
 	}
 	/**
 	 * create method to get attribute year 
